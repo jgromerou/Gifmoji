@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
+import Toast from "../helpers/toast";
 
 export const useLike = () => {
-  const sessionLikeCart = JSON.parse(sessionStorage.getItem('likeCart')) || [];
+  const sessionLikeCart = JSON.parse(sessionStorage.getItem("likeCart")) || [];
   const [like, setLike] = useState(sessionLikeCart);
 
   const onClickLike = (gifid) => {
@@ -23,8 +24,14 @@ export const useLike = () => {
         return item;
       });
       setLike(updateLikes);
+
+      Toast.fire({
+        iconHtml: `<i class="bi bi-hand-thumbs-up-fill fs-6"></i>`,
+        icon: "info",
+        title: "Me gusta el Gif",
+      });
     }
-    sessionStorage.setItem('likeCart', JSON.stringify(like));
+    sessionStorage.setItem("likeCart", JSON.stringify(like));
   };
 
   const totalLikes = (gifid) => {

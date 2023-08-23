@@ -11,7 +11,7 @@ import { useAxiosGif } from "./hooks/useAxiosGif";
 const apiKey = import.meta.env.VITE_APIKEY_GIPHY;
 
 export const Gimoji = () => {
-  const [search, setSearch] = useState("random");
+  const [search, setSearch] = useState("biker");
 
   const { data: dataCateg } = useFetchAxios(
     `gifs/categories?api_key=${apiKey}`,

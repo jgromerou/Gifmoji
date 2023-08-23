@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toast from "../helpers/toast";
 
 export const useFavorite = () => {
   const sessionFavCart = JSON.parse(sessionStorage.getItem("favCart")) || [];
@@ -19,10 +20,18 @@ export const useFavorite = () => {
     }
 
     const action = !existFavoriteCardInCart?.color
-      ? "New favorite added!"
-      : "Favorite removed!";
+      ? "Gif agregado a favorito!"
+      : "Gif borrado de favorito!";
 
-    console.log(action);
+    const icon = !existFavoriteCardInCart?.color
+      ? `<i class="bi bi-heart-fill fs-6"></i>`
+      : `<i class="bi bi-heartbreak-fill fs-6"></i>`;
+
+    Toast.fire({
+      iconHtml: icon,
+      icon: "error",
+      title: action,
+    });
 
     sessionStorage.setItem("favCart", JSON.stringify(fav));
   };
