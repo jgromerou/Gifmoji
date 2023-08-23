@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: #000;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #root {
@@ -20,19 +20,34 @@ html {
   max-width: 100px;
 }
 
-@media screen and (min-width: 768) and (max-width: 991) {
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.swal2-title {
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .widthId {
-    max-width: none;
+    max-width: 150px;
   }
 }
 
-@media screen and (min-width: 992) {
-  /* Cambiar el tamaño de los botones en pantallas grandes */
+@media screen and (min-width: 1200px) {
   .btn-lg-responsive {
-    padding: 15px 20px;
-    font-size: 20px;
+    padding: 10px 15px;
+    font-size: 15px;
   }
   .widthId {
-    max-width: none;
+    max-width: 300px;
   }
 }
