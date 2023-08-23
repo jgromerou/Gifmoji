@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { giphyAxios } from "../config/AxiosGiphy";
+import Toast from "../helpers/toast";
 
 const apiKey = import.meta.env.VITE_APIKEY_GIPHY;
 
@@ -36,7 +37,16 @@ export const useAxiosGif = (search) => {
   };
 
   const onLoadMore = () => {
-    setOffset((prev) => prev + 1 + limit);
+    const maxGifsToLoad = 70;
+    if (offset < maxGifsToLoad) {
+      setOffset((prev) => prev + 1 + limit);
+    } else {
+      Toast.fire({
+        iconColor: "#ffc107",
+        icon: "warning",
+        title: "¡Lo siento! ¡Has alcanzado el límite de GIF cargados!",
+      });
+    }
   };
 
   return {
