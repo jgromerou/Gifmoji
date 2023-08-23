@@ -41,6 +41,10 @@ export const Gimoji = () => {
     }
   };
 
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   if (isLoadingSearch) {
     return <Loading />;
   }
@@ -74,9 +78,22 @@ export const Gimoji = () => {
               </div>
             </div>
           </div>
-          <div className="container center-vertically text-center mb-4">
-            <button className="btn btn-outline-primary" onClick={onLoadMore}>
+
+          <div className="text-center mb-4 pt-4 pb-3">
+            <button
+              className="btn btn-outline-primary me-2"
+              onClick={onLoadMore}
+            >
               Cargar más resultados
+            </button>
+            <button
+              className="btn btn-outline-primary"
+              onClick={handleBackToTop}
+            >
+              Volver al Top
+              <span>
+                <i className="bi bi-arrow-up-circle ms-2"></i>
+              </span>
             </button>
           </div>
         </div>
