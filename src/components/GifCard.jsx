@@ -19,7 +19,7 @@ const GifCard = ({ dataItem }) => {
         <div key={gif.id} className="col">
           <div className="card shadow">
             <img
-              src={gif.images.fixed_width_small.url || noImage}
+              src={gif.images.fixed_width.url || noImage}
               alt={gif.name}
               width={"100%"}
               height={"230"}

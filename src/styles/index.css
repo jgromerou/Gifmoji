@@ -36,18 +36,18 @@ html {
   color: #fff;
 }
 
-@media screen and (min-width: 768) and (max-width: 991) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .widthId {
-    max-width: none;
+    max-width: 150px;
   }
 }
 
-@media screen and (min-width: 992) {
+@media screen and (min-width: 1200px) {
   .btn-lg-responsive {
-    padding: 15px 20px;
-    font-size: 20px;
+    padding: 10px 15px;
+    font-size: 15px;
   }
   .widthId {
-    max-width: none;
+    max-width: 300px;
   }
 }
