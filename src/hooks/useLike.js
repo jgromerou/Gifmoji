@@ -24,14 +24,13 @@ export const useLike = () => {
         return item;
       });
       setLike(updateLikes);
-
-      Toast.fire({
-        iconHtml: `<i class="bi bi-hand-thumbs-up-fill fs-6"></i>`,
-        icon: "info",
-        title: "Me gusta el Gif",
-      });
     }
     sessionStorage.setItem("likeCart", JSON.stringify(like));
+    Toast.fire({
+      iconHtml: `<i class="bi bi-hand-thumbs-up-fill fs-6"></i>`,
+      icon: "info",
+      title: "Me gusta el Gif",
+    });
   };
 
   const totalLikes = (gifid) => {

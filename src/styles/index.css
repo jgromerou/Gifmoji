@@ -28,6 +28,10 @@ html {
   background-color: #3fc3ee !important;
 }
 
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
 .swal2-title {
   color: #fff; /* Cambia este valor al color deseado */
 }

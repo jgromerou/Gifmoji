@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { giphyAxios } from '../config/AxiosGiphy';
+import { useEffect, useState } from "react";
+import { giphyAxios } from "../config/AxiosGiphy";
 
 const apiKey = import.meta.env.VITE_APIKEY_GIPHY;
 
 export const useAxiosGif = (search) => {
   const [dataFetch, setDataFetch] = useState([]);
-  const [searchData, setSearchData] = useState('');
+  const [searchData, setSearchData] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [offset, setOffset] = useState(0);
-  const limit = 24;
+  const limit = 12;
 
   useEffect(() => {
     getFetch();
@@ -23,6 +23,7 @@ export const useAxiosGif = (search) => {
       setDataFetch((prev) => {
         if (search !== searchData) {
           setSearchData(search);
+          setOffset(0);
           return data;
         } else {
           return [...prev, ...data];
