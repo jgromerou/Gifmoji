@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import Navbar from './components/header/Navbar';
-import SelectCategories from './components/ui/SelectCategories';
-import Search from './components/ui/Search';
-import GifCard from './components/GifCard';
-import Banner from './components/header/Banner';
-import { useFetchAxios } from './hooks/useFetchAxios';
-import { Loading } from './components/ui/Loading';
-import { useAxiosGif } from './hooks/useAxiosGif';
+import { useState } from "react";
+import Navbar from "./components/header/Navbar";
+import SelectCategories from "./components/ui/SelectCategories";
+import Search from "./components/ui/Search";
+import GifCard from "./components/GifCard";
+import Banner from "./components/header/Banner";
+import { useFetchAxios } from "./hooks/useFetchAxios";
+import { Loading } from "./components/ui/Loading";
+import { useAxiosGif } from "./hooks/useAxiosGif";
 
 const apiKey = import.meta.env.VITE_APIKEY_GIPHY;
 
 export const Gimoji = () => {
-  const [search, setSearch] = useState('random');
+  const [search, setSearch] = useState("random");
 
   const { data: dataCateg } = useFetchAxios(
     `gifs/categories?api_key=${apiKey}`,
-    'get'
+    "get"
   );
 
   const {
@@ -39,10 +39,6 @@ export const Gimoji = () => {
     if (textSearch.length >= 2) {
       setSearch(textSearch);
     }
-  };
-
-  const onOffsetInitial = () => {
-    setOffset(offset_initial);
   };
 
   if (isLoadingSearch) {
